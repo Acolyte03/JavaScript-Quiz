@@ -1,4 +1,5 @@
 var sec = 15;
+var count = 0;
     function pad ( val ) { return val > 9 ? val : "0" + val; }
 
     var yes;
@@ -11,6 +12,7 @@ var sec = 15;
     {
         $("#answer").text("Correct!");
         sec +=5 ;
+        count += 10;
         $("#Q1").addClass("invisible");
     }));
     if($("#incorrect").on( "click", function() 
@@ -19,7 +21,11 @@ var sec = 15;
         sec -= 10;
     }));
 
-
+    var init = $("#init");
+    $("#initials").on( "click", function(){
+        $("#Highest").text($("#Highest").text().replace("Lorem", init));
+    });
+    
 
     // if(yes)
     // {
